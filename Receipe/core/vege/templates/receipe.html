@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contanier">
+        <div class="sub-conatnier">
+            <form method="POST" enctype="multipart/form-data">
+                {%  csrf_token  %}
+                <h3>Receipe</h3>
+                <label>
+                    Receipe name
+                </label>
+                <input type="text" name="receipe_name" required>
+                <br>
+                <label>
+                    Receipe Descriptions 
+                </label>
+                <textarea name="receipe_des"></textarea>
+                <br>
+                <button type="submit">ADD Receipe</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

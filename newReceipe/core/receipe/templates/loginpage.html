@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login pages</h1>
+    <div class="contanier">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="m">
+                {% if messages %}
+                {{message.tags}}
+                <div class="messages">
+                    {% for message in messages %}
+                    {{message}}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            <div class="filed">
+                <span>
+                    username
+                </span>
+                <input type="text" name="username" required>
+            </div>
+            <div class="filed">
+                <span>
+                    password
+                </span>
+                <input type="password" name="password" required>
+            </div>
+            <div class="filed">
+               <button type="submit">login</button><span>if account is not exit <a href="/resistation/">resister here</a></span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <a href="/about/">about</a>|
+    <a href="/contact/">contact</a>
+
+    <h1>Person list</h1>
+    <div class="container">
+        <table style="border: 2px;">
+            <tr>
+                <th>s.no</th>
+                <th>
+                name 
+                </th>
+                <th>
+                age 
+                </th>
+                <th>address</th>
+
+            </tr>
+            {% for person in persons %}
+            <tr>
+                <th>{{forloop.counter}}</th>
+                <th>{{person.name}}</th>
+                <th>{{person.age}}</th>
+                <th>{{person.address}}</th>
+
+
+            </tr>
+            {% endfor %}
+
+           
+
+        </table>
+    </div>
+</body>
+</html>

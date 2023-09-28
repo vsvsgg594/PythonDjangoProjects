@@ -1,0 +1,109 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.sub-conatiner
+{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid blue; 
+    margin-top: 30px;
+}
+.heading
+{
+    width: 100%;
+    height: 15%;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.heading p
+{
+    color:white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.form
+{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* border: 2px solid red; */
+    margin-top: 10px;
+}
+.field
+{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 5px;
+
+}
+.field span
+
+{
+    color:black;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.btn
+{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn button
+{
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.data-container
+{
+    width: 100%;
+    height: 49%;
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid red; */
+    margin-top: 5px;
+}
+.table
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+}
+table,tr,th
+{
+  border: 2px solid black;
+}
+

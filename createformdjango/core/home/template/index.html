@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page}}</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <a href="/contact/">
+        contact
+    </a>
+    |
+    <a href="/about/">
+        about
+    </a>
+    <!-- <div class="container">
+        <div class="sub-contanier">
+            <form>
+                <div class="field">
+                    <input type="email" placeholder="email" required>
+                </div>
+                <div class="field">
+                    <input type="password" placeholder="password" required>
+                </div>
+                <div class="btn">
+                    <button type="submit">login</button>
+                </div>
+            </form>
+        </div> -->
+    <!-- </div> -->
+    <!-- {{peoples}} -->
+  <div class="container">
+    <table class="container">
+        <tr>
+          <th>s.No</th>
+          <th>name</th>
+          <th>Age</th>
+          <th>can vote</th>
+        </tr>
+        {% for people in peoples %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{people.name}}</td>
+          <td>{{people.age}}<td>
+          <td>
+            {% if people.age >= 18 %}
+            vote
+            {% else %}
+            cannot vote
+            {% endif %}
+          </td>  
+        
+        </tr>
+        {% endfor %}
+        <p>
+            {% if "cucumber" in vagetables %}
+             yes 
+             {% elif "pumkin" in vagetables %}
+              yes 
+             {% else %}
+             Not 
+
+            {% endif %}
+        </p>
+       
+      </table>
+  </div>
+</body>
+</html>

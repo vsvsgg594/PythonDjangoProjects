@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="contanier">
+        <div class="head">
+            <p>Stundents Data</p>
+            <form  method="GET">
+            <input type="search" name="search">
+            <button type="submit">search</button>
+            </form>
+            {% csrf_token %}
+        </div>
+        <div class="student-data">
+            <table>
+                <tr>
+                    <th>s no</th>
+                    <th>student id</th>
+                    <th>student name</th>
+                    <th>student email</th>
+                    <th>department</th>
+
+                </tr>
+                {%  for students in queryset %}
+                <tr>
+                    <th>{{forloop.counter}}</th>
+                    <th>{{students.student_id}}</th>
+                    <th>{{students.student_name}}</th>
+                    <th>{{students.student_email}}</th>
+                    <th>{{students.department.department}}</th>
+
+                </tr>
+                {% endfor %}
+            </table>
+
+
+        </div>
+    </div>
+</body>
+</html>

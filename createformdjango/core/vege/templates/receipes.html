@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .conatainer
+        {
+            width: 100%;
+            height: 100vh;
+        }
+        .form-group
+        {
+            width: 100%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="contanier">
+        <form method="POST" enctype="multipart/form-data">
+            {%  csrf_token  %}
+            <h1>Receipe add</h1>
+            <hr>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Receipe name</label>
+              <input type="text" class="form-control" name="receipe_name" required>
+            </div>
+            <div class="form-group">
+              <label for="text">Receipe description</label>
+               <textarea class="form-control" name="receipe_des"></textarea>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label" for="exampleCheck1">Receipe Image</label>
+              <input type="file" class="form-check-input" name="receipe_image">
+             
+              <textarea class="form-control">
+
+              </textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Receipe Add</button>
+          </form>
+    </div>
+</body>
+</html>

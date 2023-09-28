@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th>s no</th>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+            <tr>
+                {% for persons in person %}
+                <th>{{forloop.counter}}</th>
+                <th>{{persons.name}}</th>
+                <th>{{persons.age}}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

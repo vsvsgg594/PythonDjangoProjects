@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contanier">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% if messages %}
+            {{message.tags}}
+            <div class="messages">
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+            </div>
+            {% endif %}
+          
+                <span>first name</span>
+                <input type="text" name="first_name" required>
+            </div>
+            <div class="field">
+                <span>last name</span>
+                <input type="text" name="last_name" required>
+            </div>
+            <div class="field">
+                <span>username </span>
+                <input type="text" name="username" required>
+            </div>
+            <div class="field">
+                <span>password</span>
+                <input type="password" name="password" required>
+            </div>
+            <div class="field">
+                <button type="submit">resistation</button>
+            </div>
+            <p>you have already account <a href="/login/">login here</a></p>
+        </form>
+    </div>
+</body>
+</html>

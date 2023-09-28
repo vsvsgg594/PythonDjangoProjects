@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'receipe.css' %}">
+</head>
+<body>
+    <body>
+        <div class="contanier">
+            <div class="sub-conatiner" >
+                <form method="POST" enctype="multipart/form-data" class="form">
+                    {% csrf_token %}
+                    <div class="head"><h1>Receipe </h1></div>
+                    <hr>
+                   <div class="receipe-contanier">
+                    <label>Receipe name</label>
+                    <input type="text" name="receipe_name" value="{{receipe.receipe_name}} "required>
+                    <label>Receipe Description</label>
+                     <textarea name="receipe_des" value="" required>{{% receipe.receipe_des %}}</textarea>
+                    <button type="submit" id="btn">update Receipe</button>  
+                    </div>
+                    
+                </form>
+              
+            </div>
+
+    
+</body>
+</html>

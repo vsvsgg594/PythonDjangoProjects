@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'receipe.css' %}">
+</head>
+<body>
+    <div class="contanier">
+        <div class="sub-conatiner" >
+            <form method="POST" enctype="multipart/form-data" class="form">
+                {% csrf_token %}
+                <div class="head"><h1>Receipe </h1></div>
+                <hr>
+              
+                </div>
+               <div class="receipe-contanier">
+                <label>Receipe name</label>
+                <input type="text" name="receipe_name" required>
+                <label>Receipe Description</label>
+                 <textarea name="receipe_des" required> </textarea>
+                <button type="submit" id="btn">Add Receipe</button>  
+                </div>
+                
+            </form>
+          
+        </div>
+       <div class="content">
+        <div class="table">
+            <table>
+                <tr>
+                    <th>S.no</th>
+                    <th>Receipe name</th>
+                    <th>Receipe Description </th>
+                    <th>operations</th>
+                </tr>
+                {% for receipes in receipe %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{receipes.receipe_name}}</td>
+                    <td>{{receipes.receipe_des}}</td>
+                    <td><a href="/delete_receipe/{{receipes.id}}"><button type="submit" id="delete" style="color: white;background-color: red;width: 50px;height: 20px;">delete</button></a></td>
+                    <td><a href="/update_receipe/{{receipes.id}}"><button type="submit" id="update" style="color: white;background-color: rgb(0, 26, 255);width: 50px;height: 20px;">update</button></a></td>
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+       
+       </div>
+        
+    </div>
+
+</body>
+</html>

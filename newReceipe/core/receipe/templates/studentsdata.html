@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,th{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form">
+            <div class="search">
+                <input type="search" name="search">
+            </div>
+            <div class="btn">
+                <button type="submit">search</button>
+            </div>
+        </form>
+        <div class="heading">
+            <p>Students Data</p>
+            {% csrf_token %}
+        </div>
+        <div class="data">
+            <table>
+                <tr>
+                    <th>S.no</th>
+                    <th>student_id</th>
+                    <th>student_name</th>
+                    <th>department</th>
+                    <th>student_email</th>
+                    <th>student_age</th>
+                </tr>
+                {% for students in queryset %}
+                <tr>
+                    <th>{{forloop.counter}}</th>
+                    <th>{{students.student_id}}</th>
+                    <th>{{students.student_name}}</th>
+                    <th>{{students.department.department}}</th>
+                    <th>{{students.student_email}}</th>
+                    <th>{{students.student_age}}</th>
+
+                </tr>
+                {% endfor %}
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if queryset.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        {% endif %}
+                
+                        <span class="current">
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </span>
+                
+                        {% if queryset.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                            <a href="?page={{page_obj.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </table>
+
+        </div>
+    </div>
+    
+</body>
+</html>
